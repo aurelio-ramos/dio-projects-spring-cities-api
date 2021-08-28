@@ -5,6 +5,7 @@ import com.github.aurelioramos.citiesapi.domain.countries.repositories.CountryRe
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +32,11 @@ public class CountryResource {
     }
 
     @GetMapping("/{id}")
-    public Country getOne(@PathVariable Long id) {
+    public ResponseEntity getOne(@PathVariable Long id) {
         var optionalCountry = repository.findById(id);
-        return optionalCountry.get();
+        if(optionalCountry.isPresent()){
+            return ResponseEntity.ok().body(optionalCountry.get());
+        }
+        return ResponseEntity.notFound().build();
     }
 }
