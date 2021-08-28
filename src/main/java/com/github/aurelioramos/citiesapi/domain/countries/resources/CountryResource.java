@@ -1,4 +1,4 @@
-package com.github.aurelioramos.citiesapi;
+package com.github.aurelioramos.citiesapi.domain.countries.resources;
 
 import com.github.aurelioramos.citiesapi.domain.countries.entities.Country;
 import com.github.aurelioramos.citiesapi.domain.countries.repositories.CountryRepository;
