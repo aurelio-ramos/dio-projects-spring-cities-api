@@ -1,4 +1,4 @@
-package com.github.aurelioramos.citiesapi.domain.cities.entities;
+package com.github.aurelioramos.citiesapi.cities.entities;
 
 import org.hibernate.HibernateException;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;

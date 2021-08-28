@@ -1,7 +1,7 @@
-package com.github.aurelioramos.citiesapi.domain.distances;
+package com.github.aurelioramos.citiesapi.distances;
 
-import com.github.aurelioramos.citiesapi.domain.cities.entities.City;
-import com.github.aurelioramos.citiesapi.domain.cities.repositories.CityRepository;
+import com.github.aurelioramos.citiesapi.cities.entities.City;
+import com.github.aurelioramos.citiesapi.cities.repositories.CityRepository;
 import com.github.aurelioramos.citiesapi.utils.StringLocationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class DistanceService {
-    
+
     private final CityRepository cityRepository;
     Logger log = LoggerFactory.getLogger(DistanceService.class);
 
@@ -32,7 +32,7 @@ public class DistanceService {
     public Double distanceUsingMath(final Long city1, final Long city2, final EarthRadius unit) {
         log.info("distanceUsingMath({}, {}, {})", city1, city2, unit);
         final List<City> cities = cityRepository.findAllById((Arrays.asList(city1, city2)));
-
+        //TODO: add validation when not found city
         final Double[] location1 = StringLocationUtils.transform(cities.get(0).getGeolocation());
         final Double[] location2 = StringLocationUtils.transform(cities.get(1).getGeolocation());
 
@@ -62,7 +62,7 @@ public class DistanceService {
     public Double distanceUsingPoints(final Long city1, final Long city2, final EarthRadius unit) {
         log.info("distanceUsingPoints({}, {}, {})", city1, city2, unit);
         final List<City> cities = cityRepository.findAllById((Arrays.asList(city1, city2)));
-
+        //TODO: add validation when not found city
         Point p1 = cities.get(0).getLocation();
         Point p2 = cities.get(1).getLocation();
 
@@ -79,7 +79,7 @@ public class DistanceService {
     public Double distanceByCubeInMeters(Long city1, Long city2) {
         log.info("distanceByCubeInMeters({}, {})", city1, city2);
         final List<City> cities = cityRepository.findAllById((Arrays.asList(city1, city2)));
-
+        //TODO: add validation when not found city
         Point p1 = cities.get(0).getLocation();
         Point p2 = cities.get(1).getLocation();
 

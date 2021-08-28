@@ -1,7 +1,7 @@
-package com.github.aurelioramos.citiesapi.domain.states.resources;
+package com.github.aurelioramos.citiesapi.states.resources;
 
-import com.github.aurelioramos.citiesapi.domain.states.entities.State;
-import com.github.aurelioramos.citiesapi.domain.states.repositories.StateRepository;
+import com.github.aurelioramos.citiesapi.states.entities.State;
+import com.github.aurelioramos.citiesapi.states.repositories.StateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

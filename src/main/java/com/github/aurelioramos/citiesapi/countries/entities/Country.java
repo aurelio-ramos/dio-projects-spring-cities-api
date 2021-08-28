@@ -1,4 +1,4 @@
-package com.github.aurelioramos.citiesapi.domain.countries.entities;
+package com.github.aurelioramos.citiesapi.countries.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

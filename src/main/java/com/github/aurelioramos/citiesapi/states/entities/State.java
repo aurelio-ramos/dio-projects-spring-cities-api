@@ -1,6 +1,6 @@
-package com.github.aurelioramos.citiesapi.domain.states.entities;
+package com.github.aurelioramos.citiesapi.states.entities;
 
-import com.github.aurelioramos.citiesapi.domain.countries.entities.Country;
+import com.github.aurelioramos.citiesapi.countries.entities.Country;
 import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;

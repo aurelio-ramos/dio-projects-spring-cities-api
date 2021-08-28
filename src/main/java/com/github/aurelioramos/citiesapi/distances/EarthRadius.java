@@ -1,4 +1,4 @@
-package com.github.aurelioramos.citiesapi.domain.distances;
+package com.github.aurelioramos.citiesapi.distances;
 
 public enum EarthRadius {
     METERS("m", 6378168),
